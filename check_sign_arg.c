@@ -3,11 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   check_sign_arg.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 13:23:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/07 13:23:22 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/07 13:30:43 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+bool	check_sign_arg(char *str)
+{
+	
+	return(true);
+}
