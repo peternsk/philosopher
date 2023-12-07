@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
+/*   check_dig_arg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 09:54:10 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/07 13:21:48 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/12/07 12:43:40 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/12/07 12:49:11 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-#define PHILO_H
+#include "philo.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <pthread.h>
-#include <time.h>
-#include <stdbool.h>
+bool    check_dig_arg(char *str)
+{
+    int i;
 
-bool    check_dig_arg(char *str);
-int    	ft_atoi(char *str);
-
-
-#endif
+    i = 0;
+    while(str[i] != '\0')
+    {
+        if(str[i] < '0' || str[i] > '9')
+            return(false);
+        i++;
+    }
+    return(true);
+}

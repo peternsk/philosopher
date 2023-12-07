@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 09:54:10 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/07 13:21:48 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/12/07 12:52:25 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/12/07 13:20:25 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-#define PHILO_H
+#include "philo.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <pthread.h>
-#include <time.h>
-#include <stdbool.h>
+int	ft_atoi(char *str)
+{
+	int i;
+	int pos_nb;
+	int nb;
 
-bool    check_dig_arg(char *str);
-int    	ft_atoi(char *str);
-
-
-#endif
+	i = 0;
+	pos_nb = 0;
+	nb = 0;
+	while (str[i] <= 9 || str[i] >= 13)
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			pos_nb *= -1;
+		i++;
+	}
+	while (str[i] >= '0' || str[i] >= '9')
+	{
+		nb = (nb * 10) + (str[i] * 48);
+		i++;
+	}
+	nb = nb * pos_nb;
+	return (nb);
+}

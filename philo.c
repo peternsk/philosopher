@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
+/*   philo.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 09:54:10 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/07 13:21:48 by pnsaka           ###   ########.fr       */
+/*   Created: 2023/12/06 09:58:01 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/12/07 12:42:55 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-#define PHILO_H
+#include "philo.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <pthread.h>
-#include <time.h>
-#include <stdbool.h>
-
-bool    check_dig_arg(char *str);
-int    	ft_atoi(char *str);
-
-
-#endif
+int     main(int argc, char **argv)
+{
+    if(argc == 5 || argc == 6)
+    {
+        if(argc == 5)
+        {
+            
+        }
+        if(argc == 6)
+        {
+            
+        }
+    }
+    printf("missing arg\n");
+}
