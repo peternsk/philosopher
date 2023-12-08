@@ -5,7 +5,7 @@ RM      	= rm -rf
 
 #--- GROUP --#
 INC_DIR		=
-SRCS_DIR 	=
+SRCS_DIR 	= srcs
 OBJS_DIR	=
 
 MINI_LIB	=
