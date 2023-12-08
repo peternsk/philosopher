@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   check_dig_arg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
+/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 14:56:44 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/07 15:05:38 by peternsaka       ###   ########.fr       */
+/*   Created: 2023/12/07 12:43:40 by pnsaka            #+#    #+#             */
+/*   Updated: 2023/12/08 14:51:24 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../../philo.h"
 
-bool    parcer(int ac, char **av)
+bool    check_dig_arg(char *str)
 {
     int i;
 
     i = 0;
-    while(i < ac)
+    while(str[i] != '\0')
     {
-        if(check_dig_arg(av[i]) == false)
-            return(false);
-        if(check_dig_arg(av[i]) == false)
+        if(str[i] < '0' || str[i] > '9')
             return(false);
         i++;
     }

@@ -10,17 +10,18 @@ RM      	= rm -rf
 SRCS_DIR 	= srcs
 OBJS_DIR	= objs
 
+
+PARSING		=	philo parser check_dig_arg check_sign_arg
+
+PHILO_FUNC	=	
+
+UTILS		=	ft_atoi
+
 SRCS		= 	$(addsuffix .c, $(addprefix $(SRCS_DIR)/parsing/, $(PARSING))) \
 				$(addsuffix .c, $(addprefix $(SRCS_DIR)/utils/, $(UTILS))) \
 				$(addsuffix .c, $(addprefix $(SRCS_DIR)/utils/, $(PHILO_FUNC)))
 
 OBJS 		= 	$(addprefix ${OBJS_DIR}/, $(subst srcs/,,$(SRCS:.c=.o))) 
-
-PARSING		=	check_dig_arg check_sign_arg parcer ft_atoi philo
-
-PHILO_FUNC	=	
-
-UTILS		=
 
 #--- TARGET ---#
 
@@ -31,7 +32,7 @@ ${OBJS_DIR}/%.o: ${SRCS_DIR}/%.c
 	@${CC} ${FLAGS} -c $< -o $@
 
 ${NAME}: ${OBJS}
-	@${CC} ${FLAGS} -I ${OBJS} -o ${NAME}
+	@${CC} ${FLAGS} -I ${OBJS_DIR} $^ -o ${NAME}
 
 clean: 
 	@${RM} ${OBJS_DIR}

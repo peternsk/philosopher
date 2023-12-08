@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 09:54:10 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/08 11:16:03 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/08 14:49:22 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_global
 
 bool				check_dig_arg(char *str);
 bool				check_sign_arg(char *str);
-bool				parcer(int ac, char **av);
+bool				parser(int ac, char **av);
 int					ft_atoi(char *str);
 
 #endif
