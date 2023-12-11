@@ -6,12 +6,13 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:52:44 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/08 14:48:51 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/11 08:33:44 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-    this fonction will take the verify if the philo have the two fork require to eat(print)
+    this fonction will take the verify if the philo have the two 
+    fork require to eat(print)
 
     -> mutex_lock(philo)
        timestamp_in_ms X has taken right fork
@@ -26,14 +27,12 @@
     -> mutex_unlock(philo - 1)
 */
 
-
 #include "../../philo.h"
 
-void    *eat(void *arg)
+void	*eat(void *arg)
 {
-    t_global *g_struct;
+	t_global *g_struct;
 
-    g_struct = (t_global*)arg;
-    
-    return(NULL);
+	g_struct = (t_global *)arg;
+	return (NULL);
 }
