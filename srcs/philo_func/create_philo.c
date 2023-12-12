@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 08:35:07 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/11 09:50:23 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/12 13:34:13 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
     #   #   ID     #   #   #          #   #   #          #   #   #          #   #   #          #   #
     #   #   l_fork #   #   #          #   #   #          #   #   #          #   #   #          #   #
     #   #   r_fork #   #   #          #   #   #          #   #   #          #   #   #          #   #
-    #   #          #   #   #          #   #   #          #   #   #          #   #   #          #   #
-    #   #          #   #   #          #   #   #          #   #   #          #   #   #          #   # 
     #   ############   #   ############   #   ############   #   ############   #   ############   #
     #                  #                  #                  #                  #                  #
     ################################################################################################
@@ -38,10 +36,31 @@ t_philo	*create_philo(t_global *glb_s)
 	glb_s->asso_philo = (t_philo *)malloc(glb_s->n_of_p * sizeof(t_philo) + 1);
 	if (!glb_s->asso_philo)
 		return (0);
-	while (&glb_s->asso_philo)
+	while (glb_s->asso_philo)
 	{
-		glb_s->asso_philo[i].id = i;
-		i++;
+		if (pthread_mutex_init(&glb_s->asso_philo[i].r_fork, NULL) != 0)
+			return (0);
 	}
+    i = 0;
+    while(glb_s->asso_philo)
+    {
+        glb_s->asso_philo[i].l_fork = 
+    }
 	return (glb_s->asso_philo);
 }
+
+/*
+    pthread_mutex_init(&lock, NULL); // Initialize the mutex
+
+    // ...
+
+    pthread_mutex_lock(&lock); // Lock the mutex
+
+    // Critical section here...
+
+    pthread_mutex_unlock(&lock); // Unlock the mutex
+
+    // ...
+
+    pthread_mutex_destroy(&lock); // Destroy the mutex
+*/

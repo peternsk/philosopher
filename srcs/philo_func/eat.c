@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:52:44 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/11 08:33:44 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/11 10:07:44 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 
 void	*eat(void *arg)
 {
-	t_global *g_struct;
+	t_global	*g_struct;
 
 	g_struct = (t_global *)arg;
 	return (NULL);
