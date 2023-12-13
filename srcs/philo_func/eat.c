@@ -6,22 +6,27 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:52:44 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/11 10:07:44 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/13 12:22:45 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
     this fonction will take the verify if the philo have the two 
     fork require to eat(print)
-
-    -> mutex_lock(philo)
+    --> impaire(fork);
+    --> else think
+    
+    -> mutex_lockmutex r)
        timestamp_in_ms X has taken right fork
-    -> mutex_lock(philo - 1)
+    -> mutex_lock(mutex l)
        timestamp_in_ms X has taken left fork
+
+       func ---->evaluation du temps (think + sleep) < time_to_die
 
         mutex_lock()
             printf(philo.id is eating);
-        mutex_lock()
+            usleep(glb_s->time_to_eat)
+        mutex_unlock()
     
     -> mutex_unlock(philo)
     -> mutex_unlock(philo - 1)

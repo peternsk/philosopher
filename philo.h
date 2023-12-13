@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 09:54:10 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/12 08:59:02 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/13 12:13:07 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ typedef struct s_global
 	int				time_to_eat;
 	int				time_to_sleep;
 	int				must_eat;
-	int				n_of_arg;
 	pthread_mutex_t	g_mutex;
 	t_philo			*asso_philo;
 
@@ -52,5 +51,8 @@ int					ft_atoi(char *str);
 
 /*-- philo_func --*/
 t_philo				*create_philo(t_global *glb_s);
+t_global			*init_glb_s(char **av);
+t_philo    			*init_philo(t_global *glb_s);
+
 
 #endif
