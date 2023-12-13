@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:52:44 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/13 12:22:45 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/13 13:26:40 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
     --> impaire(fork);
     --> else think
     
-    -> mutex_lockmutex r)
+    -> mutex_lock(mutex r)
        timestamp_in_ms X has taken right fork
     -> mutex_lock(mutex l)
        timestamp_in_ms X has taken left fork
 
        func ---->evaluation du temps (think + sleep) < time_to_die
 
-        mutex_lock()
+        mutex_lock(gls-> mutex_eat)
             printf(philo.id is eating);
             usleep(glb_s->time_to_eat)
         mutex_unlock()
@@ -40,4 +40,5 @@ void	*eat(void *arg)
 
 	g_struct = (t_global *)arg;
 	return (NULL);
+    
 }

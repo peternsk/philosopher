@@ -13,7 +13,7 @@ OBJS_DIR	= objs
 
 PARSING		=	philo parser check_dig_arg check_sign_arg
 
-PHILO_FUNC	=	create_philo
+PHILO_FUNC	=	create_philo_mutex
 
 UTILS		=	ft_atoi
 

@@ -6,7 +6,7 @@
 /*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 08:35:07 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/13 11:01:12 by pnsaka           ###   ########.fr       */
+/*   Updated: 2023/12/13 13:05:38 by pnsaka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 
 #include "../../philo.h"
 
-t_philo	*create_philo(t_global *glb_s)
+t_philo	*create_philo_mutex(t_global *glb_s)
 {
 	int	i;
 
