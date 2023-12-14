@@ -33,6 +33,6 @@ t_philo    *init_philo(t_global *glb_s)
         return(NULL);
     platon->id = 0;
     platon->plates = glb_s->must_eat;
-    platon->l_fork
-    
+    platon->l_fork = 0;
+	platon->r_fork = 0;
 }
