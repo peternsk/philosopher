@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:52:25 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/08 14:48:57 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/01/05 19:09:20 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../philo.h"
 
-int	ft_atoi(char *str)
+long	ft_atol(char *str)
 {
 	int i;
-	int pos_nb;
-	int nb;
+	long nb;
 
 	i = 0;
-	pos_nb = 0;
 	nb = 0;
-	while (str[i] <= 9 || str[i] >= 13)
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (str[i] == '-')
-			pos_nb *= -1;
+		nb = (nb * 10) + (str[i] - 48);
 		i++;
 	}
-	while (str[i] >= '0' || str[i] >= '9')
-	{
-		nb = (nb * 10) + (str[i] * 48);
-		i++;
-	}
-	nb = nb * pos_nb;
+	if(nb > INT_MAX || nb < INT_MIN)
+		ext_err("number not an int..");
 	return (nb);
 }

@@ -13,9 +13,9 @@ OBJS_DIR	= objs
 
 PARSING		=	philo parser check_dig_arg check_sign_arg
 
-PHILO_FUNC	=	create_philo
+PHILO_FUNC	=	init
 
-UTILS		=	ft_atoi
+UTILS		=	ft_atol ext_err
 
 SRCS		= 	$(addsuffix .c, $(addprefix $(SRCS_DIR)/parsing/, $(PARSING))) \
 				$(addsuffix .c, $(addprefix $(SRCS_DIR)/philo_func/, $(PHILO_FUNC))) \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_sign_arg.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 13:23:11 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/08 14:47:56 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/01/05 13:34:00 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ bool    check_sign_arg(char *str)
     sign_count = 0;
     if(!str)
         return(false);
-    if(str[i] == '-' || str[i] == '+')
+    if(str[i] == '+')
     {
         sign_count++;
         i++;
     }
     while(str[i] != '\0')
     {
-        if(str[i] == '-' || str[i] == '+')
-            return(false);
+        if(str[i] == '+')
+        	return(false);
         i++;
     }
     if(sign_count > 1)

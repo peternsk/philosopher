@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_dig_arg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnsaka <pnsaka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:43:40 by pnsaka            #+#    #+#             */
-/*   Updated: 2023/12/08 14:51:24 by pnsaka           ###   ########.fr       */
+/*   Updated: 2024/01/05 18:50:28 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,12 @@ bool    check_dig_arg(char *str)
     i = 0;
     while(str[i] != '\0')
     {
-        if(str[i] < '0' || str[i] > '9')
-            return(false);
-        i++;
+		while((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+			i++;
+        if((str[i] >= '0' && str[i] <= '9') || (str[i] == '+'))
+        	i++;
+		else
+        	return(false);
     }
     return(true);
 }
