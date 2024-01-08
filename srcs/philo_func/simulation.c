@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   simulation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 14:56:44 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/01/07 21:39:54 by peternsaka       ###   ########.fr       */
+/*   Created: 2024/01/07 23:59:10 by peternsaka        #+#    #+#             */
+/*   Updated: 2024/01/08 00:14:24 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../philo.h"
 
-bool	parser(char **val)
+void	*simulation(void *arg)
 {
-	int	i;
+	t_philo *philo;
 
-	i = 1;
-	while (val[i] != NULL)
-	{
-		if (check_dig_arg(val[i]) == false)
-			return (false);
-		if (check_sign_arg(val[i]) == false)
-			return (false);
-		i++;
-	}
-	return (true);
+	philo = (t_philo *)arg;
+	
 }

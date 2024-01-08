@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   monitoring.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 14:56:44 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/01/07 21:39:54 by peternsaka       ###   ########.fr       */
+/*   Created: 2024/01/08 00:14:38 by peternsaka        #+#    #+#             */
+/*   Updated: 2024/01/08 00:29:47 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../philo.h"
 
-bool	parser(char **val)
-{
-	int	i;
+/*
+	--- these function will monitor a couple of importante paramater ---
 
-	i = 1;
-	while (val[i] != NULL)
-	{
-		if (check_dig_arg(val[i]) == false)
-			return (false);
-		if (check_sign_arg(val[i]) == false)
-			return (false);
-		i++;
-	}
-	return (true);
-}
+	=> is the philosopher dead
+	=> is the philosopher full
+	=> is the philosopher oversteped his time between his last and next meal
+	=> is all philosopher are running
+*/

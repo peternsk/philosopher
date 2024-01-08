@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 09:54:10 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/01/07 16:15:19 by peternsaka       ###   ########.fr       */
+/*   Updated: 2024/01/07 21:26:45 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ typedef struct s_global
 /* parsing */
 bool				check_dig_arg(char *str);
 bool				check_sign_arg(char *str);
-bool				parser(t_global *glb_s, char **av);
+bool				parser(/*t_global *glb_s,*/ char **av);
 
 /*-- philo_func --*/
-void 				init_val(t_global *glb_s);
+void 				init_val(t_global *glb_s, char **val);
 void			    start_thread(t_global *glb_s);
 
 /*-- utils --*/
