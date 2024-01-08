@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 08:45:53 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/01/07 16:18:19 by peternsaka       ###   ########.fr       */
+/*   Updated: 2024/01/07 21:13:58 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static void		init_arr_mutx(t_philo *philo, t_fork *fork, int position)
 	{
 		philo->r_fork = &fork[position];
 		philo->l_fork = &fork[(position + 1) % philo->glb_s->n_of_p];
+		printf("philo %d/n", philo->id);
 	}
 	philo->r_fork = &fork[(position + 1) % philo->glb_s->n_of_p];
 	philo->l_fork = &fork[position];
