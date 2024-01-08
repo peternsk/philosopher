@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 00:14:38 by peternsaka        #+#    #+#             */
-/*   Updated: 2024/01/08 00:29:47 by peternsaka       ###   ########.fr       */
+/*   Updated: 2024/01/08 08:46:59 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,8 @@
 	=> is the philosopher oversteped his time between his last and next meal
 	=> is all philosopher are running
 */
+
+void	*monitoring(void *arg)
+{
+	
+}

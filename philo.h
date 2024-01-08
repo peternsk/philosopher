@@ -6,7 +6,7 @@
 /*   By: peternsaka <peternsaka@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 09:54:10 by pnsaka            #+#    #+#             */
-/*   Updated: 2024/01/07 21:26:45 by peternsaka       ###   ########.fr       */
+/*   Updated: 2024/01/08 13:48:08 by peternsaka       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,30 @@
 # include <sys/time.h>
 # include <limits.h>
 
-# define EAT	"philo is eating"
-# define SLEEP	"philo is sleeping"
-# define L_FORK "philo has the left fork"
-# define R_FORK "philo has the left fork"
-# define FULL	"philo is full"
-# define DEAD	"philo is dead"
+# define EAT		" is eating 🍝"
+# define SLEEP		" is sleeping 😴"
+# define THINKING	" is thinking 🧠"
+# define L_FORK 	" has the left fork "
+# define R_FORK 	" has the right fork"
+# define RL_FORK 	" has release the left fork"
+# define RR_FORK 	" has release the right fork"
+# define FULL		" is full 🫃🏾"
+# define DEAD		" is dead 💀"
 
 typedef struct s_fork
 {
 	pthread_mutex_t fork;
 	int				id;
 }			t_fork;
+
+typedef struct s_mtx_act
+{
+	pthread_mutex_t eating;
+	pthread_mutex_t sleeping;
+	pthread_mutex_t writing;
+	pthread_mutex_t mtx_plate;
+} 			t_mtx_act;
+
 
 typedef struct s_philo
 {
@@ -44,6 +56,7 @@ typedef struct s_philo
 	pthread_t		platon;			// the philo
 	t_fork			*r_fork;		// the fork the philo
 	t_fork			*l_fork;		// a pointer to the fork of the philo beside
+	t_mtx_act		*action;		// the mutexs that will be lock/unlock when the philo is doing an action
 	struct s_global	*glb_s;			// a pointer to the global structure for philo to have asses
 }					t_philo;
 
@@ -53,10 +66,12 @@ typedef struct s_global
 	long			time_to_die;	// limit time to die
 	long			time_to_eat;	// limit time to eat
 	long			time_to_sleep;	// time that philo si sleeping
-	int				must_eat;		// number of plate the philo must eat
+	int				must_eat;
+	bool			plate_counter;		// number of plate the philo must eat
 	long			strt_sim_time;	// time at the beginning of the simulation
 	pthread_mutex_t	eat;			// the mutex that will be lock or unlock by philo when eating
 	pthread_mutex_t	sleep;			// the mutex that will be lock or unlock by philo when sleeping
+	pthread_t		omni_thread;	// the thread that will monitor the philo.
 	t_fork			*forks;			// an array of all the forks
 	t_philo			*asso_philo;	// an array of all the philos
 
@@ -69,10 +84,13 @@ bool				parser(/*t_global *glb_s,*/ char **av);
 
 /*-- philo_func --*/
 void 				init_val(t_global *glb_s, char **val);
-void			    start_thread(t_global *glb_s);
+void   				*start_thread(t_global *glb_s);
+void				eat_func(t_philo *philo);
+void				*simulation(void *arg);
 
 /*-- utils --*/
 long				ft_atol(char *str);
+void				print_statement(t_philo *philo, char *stmt);
 void				ext_err(char *err_str);
 
 #endif
